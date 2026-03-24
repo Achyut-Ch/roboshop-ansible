@@ -36,6 +36,6 @@
       record: "{{item.item}}-{{env}}.{{ domain_name }}" #mongodb-dev.daws88.sbs
       type: A
       ttl: 1
-      value:"{{ item.instances[0].private_ip_address }}"
+      value: "{{ item.instances[0].private_ip_address }}"
       wait: true
     loop: "{{ec2_output.results}}"    
