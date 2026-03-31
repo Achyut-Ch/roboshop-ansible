@@ -61,4 +61,9 @@
   - name: print the output
     ansible.builtin.debug:
       msg: "{{catalogue_output}}"    
+
+
+  - name: load the products
+    ansible.builtin.shell: mongosh --host "{{MONGODB_HOST}}" --quiet < /app/schema/catalogue.js
+    when: catalogue_output.stdout < 0
   
